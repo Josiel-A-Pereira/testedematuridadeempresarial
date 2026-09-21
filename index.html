@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f568b">
+  <title>Sondagem Empresarial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">≡</span><span>SEBRAE</span></div>
+    <div class="title">Sondagem Empresarial</div>
+    <button class="ghost" id="newAssessment" type="button">Nova sondagem</button>
+  </header>
+
+  <main>
+    <section class="intro panel">
+      <div>
+        <p class="eyebrow">Diagnóstico de maturidade gerencial</p>
+        <h1>Dados da empresa</h1>
+      </div>
+      <div class="company-fields">
+        <label>Nome da empresa<input id="companyName" type="text" placeholder="Informe o nome da empresa"></label>
+        <label>Faturamento anual (R$)<input id="annualRevenue" inputmode="decimal" type="text" placeholder="Ex.: 350.000,00"></label>
+      </div>
+      <fieldset class="scope" id="scopeSelector">
+        <legend>Dimensões a responder</legend>
+        <div class="scope-actions"><button class="link-button" id="selectAll" type="button">Selecionar todas</button><button class="link-button" id="clearSelection" type="button">Limpar seleção</button></div>
+        <div class="dimension-checkboxes" id="dimensionChoices"></div>
+      </fieldset>
+    </section>
+
+    <nav class="stepper" id="stepper" aria-label="Dimensões da sondagem"></nav>
+    <section id="survey" aria-live="polite"></section>
+
+    <section class="actions">
+      <button class="secondary" id="previous" type="button">Anterior</button>
+      <button class="primary" id="next" type="button">Próxima dimensão</button>
+      <button class="primary hidden" id="showDashboard" type="button">Ver dashboard final</button>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dashboard-head">
+        <div>
+          <p class="eyebrow">Resultado da sondagem</p>
+          <h2>Dashboard final</h2>
+          <span class="partial-badge hidden" id="partialBadge">RESULTADO PARCIAL</span>
+          <p id="dashboardCompany"></p>
+        </div>
+        <button class="secondary" id="printDashboard" type="button">Imprimir / Salvar em PDF</button>
+      </div>
+      <div class="score-grid" id="scoreGrid"></div>
+      <div class="dashboard-grid">
+        <article class="chart-card panel">
+          <h3>Maturidade gerencial global</h3>
+          <canvas id="maturityChart" role="img" aria-label="Gráfico de maturidade por dimensão"></canvas>
+          <div class="legend"><span><i class="result"></i>Resultado</span><span><i class="level2"></i>Nível 2</span><span><i class="level3"></i>Nível 3</span></div>
+        </article>
+        <article class="chart-card panel">
+          <h3>Visão de maturidade por dimensão</h3>
+          <canvas id="radarChart" role="img" aria-label="Gráfico radar de maturidade por dimensão"></canvas>
+          <div class="legend"><span><i class="result"></i>Resultado</span><span><i class="level2"></i>Nível 2</span><span><i class="level3"></i>Nível 3</span></div>
+        </article>
+        <article class="turns-card panel">
+          <h3>Quantidade de turnos necessários</h3>
+          <div class="overall-turns"><strong id="totalHours">—</strong><span>horas de consultoria</span><small id="totalTurns">—</small></div>
+          <p class="recommendation" id="maturityText"></p>
+          <div class="area-turns" id="areaTurns"></div>
+        </article>
+      </div>
+      <p class="note">Referência de níveis: Nível 2 = 50% e Nível 3 = 80%. Os resultados e a indicação de horas seguem as fórmulas da planilha original.</p>
+    </section>
+  </main>
+  <footer>Aplicação local — os dados ficam somente neste navegador.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

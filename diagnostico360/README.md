@@ -1,6 +1,6 @@
 # Diagnóstico 360 — GitHub Pages
 
-Aplicação estática de diagnóstico de maturidade empresarial com nove áreas e 71 perguntas. Inclui Inovação e tecnologias aplicadas, seleção livre de áreas, evidências, histórico, gráficos de barras e radar, relatório para impressão e exportação/importação JSON.
+Aplicação estática de diagnóstico de maturidade empresarial com nove áreas e 71 perguntas. Inclui Inovação e tecnologias aplicadas, seleção livre de áreas, evidências, histórico, gráficos de barras e radar, relatório PDF com download direto e nível de gestão em destaque e exportação/importação JSON.
 
 ## Publicação
 
@@ -8,7 +8,7 @@ Os arquivos funcionam na raiz de um site ou em uma subpasta. Não exigem instala
 
 Em um repositório novo, envie os arquivos desta pasta (não o ZIP) e configure **Settings → Pages → Build and deployment → Deploy from a branch → main → / (root) → Save**. O GitHub exibirá o endereço de publicação. No GitHub Free, utilize um repositório público.
 
-Se o repositório já possui GitHub Pages ativado, basta adicionar estes arquivos à pasta escolhida na origem publicada e aguardar a conclusão de “pages build and deployment” em Actions. Mantenha index.html, style.css, data.js, engine.js, app.js e favicon.svg juntos.
+Se o repositório já possui GitHub Pages ativado, basta adicionar estes arquivos à pasta escolhida na origem publicada e aguardar a conclusão de “pages build and deployment” em Actions. Mantenha index.html, style.css, data.js, engine.js, app.js, pdf-report.js, pdf-lib.min.js e favicon.svg juntos.
 
 ## Dados dos diagnósticos
 
